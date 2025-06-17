@@ -122,7 +122,7 @@ export default function () {
 
 
 ## How to Run
-###Backend
+### Backend
 
 ```
 cd backend/temperature-api
@@ -130,10 +130,22 @@ npm install
 npm run dev
 ```
 
-###Frontend
+### Frontend
 
 ```
 cd frontend
 npm install
 npm run dev
 ```
+
+## Known Issues & Fixes
+
+Issues                                         Cause                             Fix
+------------------------------------------------------------------------------------------------------------------------
+k6 can't connect to Vite server                Host binding issue                Use `host:'0.0.0.0'` in vite.config.js
+------------------------------------------------------------------------------------------------------------------------
+React chart shows only temp, not timestamp     No time tracking initially        Switched to timestamps from API
+------------------------------------------------------------------------------------------------------------------------
+JWT removed during cleanup                     Extra complexity, not required    Removed to keep scope tight
+------------------------------------------------------------------------------------------------------------------------
+429 errors appear when testing /temperature    Rate limit exceeded               Expected behavior
