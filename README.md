@@ -114,14 +114,24 @@ export default function () {
 
 ### Features
 
-- Live-updating chart (60s rolling window)
+- Real-time graph (updates every second)
+- Rolling window of last 60 seconds
 - Gradient-filled line under the graph
 - Timestamps on x-axis
 - Responsive and animated design
 - Tooltip on hover to show temperature values
+- Mobile responsive layout using flexbox
+- Chart card hover + animation
+- Mobile/tablet friendly
+
+### Component Breakdown
+
+- `TemperatureChart.jsx`: Handles fetch + chart logic
+- `App.css`: Styling, animation, responsive layout
+- `App.jsx`, `main.jsx`: Entry setup
 
 
-## How to Run
+## How to Run Locally
 ### Backend
 
 ```
@@ -129,6 +139,7 @@ cd backend/temperature-api
 npm install
 npm run dev
 ```
+**Visit**: `http://localhost:5000/temperature`
 
 ### Frontend
 
@@ -137,6 +148,7 @@ cd frontend
 npm install
 npm run dev
 ```
+**Visit**: `http://localhost:5173`
 
 ## Known Issues & Fixes
 
