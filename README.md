@@ -109,3 +109,31 @@ export default function () {
 
 ### Logging
 - Used `morgan` to log incoming requests
+
+## Frontend Dashboard
+
+### Features
+
+- Live-updating chart (60s rolling window)
+- Gradient-filled line under the graph
+- Timestamps on x-axis
+- Responsive and animated design
+- Tooltip on hover to show temperature values
+
+
+## How to Run
+###Backend
+
+```
+cd backend/temperature-api
+npm install
+npm run dev
+```
+
+###Frontend
+
+```
+cd frontend
+npm install
+npm run dev
+```
