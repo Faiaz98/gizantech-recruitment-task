@@ -80,6 +80,32 @@ export const options = {
 };
 
 export default function () {
-  http.get(
+  http.get('http://localhost:5173');
+}
 
 ```
+**Result:** All requests returned 200, no degradation.
+
+## Backend API
+
+### Endpoint
+`GET /temperature`
+
+### Response
+
+```json
+{
+  "temperature": 31.3,
+  "unit": "Celsius",
+  "timestamp": "2025-06-17T13:27:57.813Z"
+}
+
+```
+
+### Error Handling
+- 404 for invalid routes
+- 500 for server errors
+- All errors returned as JSON
+
+### Logging
+- Used `morgan` to log incoming requests
