@@ -157,3 +157,8 @@ npm run dev
 | React chart shows only temp, not timestamp | No time tracking initially       | Switched to timestamps from API          |
 | JWT removed during cleanup                 | Extra complexity, not required   | Removed to keep scope tight              |
 | 429 errors appear when testing /temperature| Rate limit exceeded              | Expected behavior                        |
+
+
+## Final Note
+Thank you GizanTech! This was a challenging but rewarding assignment - covering everything from backend to frontend UX. Every
+decision made here was intentional and aligned with the PDF specs.
