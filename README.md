@@ -20,3 +20,66 @@ This is a full-stack temperature monitoring System built as part of the Trainee 
 | Testing     | k6 (for performance tests)    |
 
 ---
+
+---
+
+## Development Steps & Decisions
+
+### Initial Setup
+- Set up the backend with Express to serve `/temperature` JSON
+- Created a rate limiter middleware (100 req/sec)
+
+### Frontend Setup
+- Used Vite for fast React dev server
+- Chart.js via react-chartjs-2 to draw real-time graph
+
+### Real-Time Chart Decisions
+- Updated every 1s via `setInterval`
+- Replaced simple `1s, 2s` x-axis with real `timestamp` labels
+
+### Style Enhancements
+- Created a modern card layout using CSS
+- Added animations and responsive behavior for mobile
+
+### Problems Solved
+- `k6` couldn't reach Vite at `localhost`
+    **Fix**: Fixed with `server.host = '0.0.0.0'` in `vite.config.js`
+
+- API initially returned only temperature
+   **Fix**: Added `unit` and `timestamp` as required by PDF
+
+- JWT auth was added but later removed
+  **Update**: Chose to simplify for clarity as it wasn't required
+
+
+---
+
+## Performance Tests
+
+###1. Rate Limit Test
+
+```js
+//k6-rate-limit.js
+export const options = {
+  vus: 150,
+  duration: '1s',
+}:
+export default function() {
+  http.get('http://localhost:5000/temperature');
+}
+```
+**Result:** 100 requests succeeded (200), rest returned 429.
+
+###2. Frontend Load Test (1000 Users)
+
+```js
+//k6-frontend-load.js
+export const options = {
+  vus: 1000,
+  duration:'10s',
+};
+
+export default function () {
+  http.get(
+
+```
